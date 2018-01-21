@@ -1,0 +1,69 @@
+links used in this competition
+------------------------------
+https://analyticsvidhya.slack.com/messages/C61MJ0UL8/convo/C61MJ0UL8-1516493130.000051/  -- slack
+https://datahack.analyticsvidhya.com/contest/mckinsey-analytics-online-hackathon-ii/lb  -- leaderboard
+https://datahack.analyticsvidhya.com/contest/mckinsey-analytics-online-hackathon-ii/  -- official link
+
+KNN
+----
+(n_neighbors=10, weights='distance')
+Training:
+---------
+Accuracy Score : 0.999827865678
+RMSE : 0.0131199970331
+AUC-ROC : 0.994117647059
+
+
+
+
+['City_Code_numeric',
+ 'Employer_Code_numeric',
+ 'Customer_Existing_Primary_Bank_Code_numeric',
+ 'Age_in_days']
+
+ testdf.loc[np.isnan(testdf['Employer_Code']), 'Employer_Code_numeric'] = 0.0 -- issue
+ traindf['City_Code_numeric'].fillna(traindf['City_Code_numeric'].dropna().mode(), inplace=True)
+
+
+Some useful slack notes
+------------------------
+xgboost model to go above .8+
+
+ Chakraborty [7:23 PM]
+I used a simple trick to cross the 0.85 barrier
+
+[7:24 PM]
+Since there were a lot of missing values.....I did my modelling seperately
+
+
+Sujata P [7:25 PM]
+can you elaborate?
+
+
+Chakraborty [7:25 PM]
+Sure
+
+[7:26 PM]
+I removed all the missing values.....and hence was left with a training dataset of 20000 points and test dataset of 8000 points
+
+[7:27 PM]
+I generated my first set of predictions on this dataset. After that I used the remaining part of the dataset without the columns of Interest payment, EMI etc...to generate the second set of predictions (edited)
+
+[7:29 PM]
+Unfortunately this idea of modelling them differently did not occur to me before.....and hence I was not able to experiment much
+
+
+Sujata P [7:29 PM]
+I removed the missing values for Loan amount but my counts were different.
+
+
+Chakraborty [7:29 PM]
+but it boosted my score from 0.83 to 0.85
+
+
+Sujata P [7:29 PM]
+i did not realize that i had to submit probabilities
+
+
+Chakraborty [7:30 PM]
+No no...I removed all the missing values.....I was left with a clean dataset of around 20000 train and 8000 test examples
