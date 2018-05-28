@@ -8,7 +8,7 @@ They source leads through various channels like search, display, email campaigns
 They now want to identify the leads' segments having a higher conversion ratio (lead to buying a product) so that they can specifically target these potential customers through additional channels and re-marketing. They have provided a partial data set for salaried customers from the last 3 months. They also capture basic details about customers. We need to identify the segment of customers with a high probability of conversion in the next 30 days.
 
 # My Solution
-While I tried out various models:
+After rigorous data cleaning and pre-processing, I tried out various models:
 Random Forest and Multi-Layer-Perceptron were a better fit to this problem.
 
 AV-McKinsey-Hackathon-ShayanRay-RF.ipynb
